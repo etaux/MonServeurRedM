@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+#hud-container {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 8px 15px;
+    display: none; /* Caché par défaut, affiché par JS */
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hud-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}

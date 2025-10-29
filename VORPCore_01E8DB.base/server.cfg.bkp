@@ -1,0 +1,113 @@
+# __      ______  _____  _____     _____ ____  _____  ______ 
+# \ \    / / __ \|  __ \|  __ \   / ____/ __ \|  __ \|  ____|
+#  \ \  / / |  | | |__) | |__) | | |   | |  | | |__) | |__   
+#   \ \/ /| |  | |  _  /|  ___/  | |   | |  | |  _  /|  __|  
+#    \  / | |__| | | \ \| |      | |___| |__| | | \ \| |____ 
+#     \/   \____/|_|  \_\_|       \_____\____/|_|  \_\______|
+#
+# server.cfg DOCS: https://aka.cfx.re/server-commands
+# VORP Official Support: https://discord.gg/DHGVAbCj7N
+
+## You CAN edit the following:
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+sv_licenseKey "cfxk_SgT3aCppdsjkOXBECCxm_26cs9o"
+sv_maxclients 48
+sv_enforceGameBuild 1491 #September 2022 update
+set gamename rdr3
+set steam_webApiKey "088009F5B76DB1B4BBE7ABFC8ACAE384" #https://steamcommunity.com/dev/apikey get it here
+set mysql_connection_string "mysql://root@localhost/VORPCore_01E8DB?charset=utf8mb4"
+set mysql_slow_query_warning 200    # to only show warnings above 700
+load_server_icon icon.png  #REPLACE the icon.png found in the folder to your logo 96x96
+sets tags "roleplay, western, bandits"
+set txAdmin-menuPtfxDisable true
+## You SHOULD edit the following:
+sv_hostname "dev built with VORPCore!"
+sets sv_projectName "[VORPCore] dev"
+sets sv_projectDesc "VorpCore Official txAdmin recipe! This will set up a base vorp official server."
+sets locale "root-AQ" # change to your language (eg. en-US, pt-BR, de-DE)
+set resources_useSystemChat true #chat resource is now found within the artifacts
+
+## Turns off the information about players joining and leaving the server on the chat.
+set chat_showJoins false
+set chat_showQuits false
+
+## These resources will start by default.
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager-rdr3
+ensure redm-map-one
+ensure hardcap
+
+## Voice Chat
+ensure pma-voice
+ensure loadingscreen
+
+## Dependencies
+ensure oxmysql
+ensure weathersync
+ensure redm-ipls
+ensure syn_minigame
+ensure lockpick
+ensure PolyZone
+ensure moonshine_interiors
+ensure vorp_menu
+ensure female_body_fix
+ensure vorp_lib
+
+## Permissions
+exec resources/[standalone]/weathersync/permissions.cfg
+exec resources/[VORP]/vorp_admin/vorp_perms.cfg
+
+## VORP Resources
+ensure vorp_core
+ensure vorp_inputs
+ensure vorp_progressbar
+ensure vorp_inventory
+ensure vorp_character
+ensure vorp_utils #deprecated
+ensure vorp_admin
+ensure vorp_metabolism
+ensure vorp_doorlocks
+ensure vorp_barbershop
+ensure vorp_postman
+ensure vorp_hunting
+ensure vorp_stables
+ensure vorp_weaponsv2
+ensure vorp_stores
+ensure vorp_fishing
+ensure vorp_crawfish
+ensure vorp_herbs
+ensure vorp_housing
+ensure vorp_banking
+ensure vorp_mailbox
+ensure vorp_walkanim
+ensure vorp_police
+ensure vorp_crafting
+ensure vorp_zonenotify
+ensure vorp_mining
+ensure vorp_lumberjack
+ensure vorp_animations 
+ensure vorp_outlaws
+ensure vorp_medic
+ensure vorp_billing
+ensure vorp_paycheck
+ensure vorp_wildhorse
+ensure vorp_lootnpcs
+#ensure vorp_imapviewtool for live preview of ipls
+
+## Add system admins
+add_ace group.admin command allow # allow all commands
+add_ace group.admin command.quit deny # but don't allow quit
+
+# vorp lib
+add_ace resource.vorp_lib command.add_ace allow
+add_ace resource.vorp_lib command.remove_ace allow
+
+#add_ace identifier.steam:0000000000a0000 group.admin command allow # Example Steam Hex Usage
+add_principal identifier.fivem:13450 group.admin #az1
+
+
+
+

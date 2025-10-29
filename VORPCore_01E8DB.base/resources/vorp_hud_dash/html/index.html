@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HUD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud-container">
+        <!-- Ligne 1: Infos Joueur -->
+        <div class="hud-row">
+            <span id="name">👤 Chargement...</span>
+            <span id="job">💼 Chargement...</span>
+            <span id="time">🕒 --:--</span>
+        </div>
+        <!-- Ligne 2: Stats Vitales et Argent -->
+        <div class="hud-row">
+            <span id="health">❤️ 100</span>
+            <span id="stamina">🔋 100</span>
+            <span id="hunger">🥩 100</span>
+            <span id="thirst">💧 100</span>
+            <span id="money">💰 $0</span>
+            <span id="bank">🏦 $0</span>
+        </div>
+        <!-- Progress Bar -->
+        <div id="progress" style="display:none; margin-top:6px;">
+            <div id="progress-text" style="font-weight:bold; margin-bottom:2px;">...</div>
+            <div style="width:100%; height:8px; background:rgba(255,255,255,0.2); border-radius:4px; overflow:hidden;">
+                <div id="progress-fill" style="height:100%; width:0%; background:#7c2d2d;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
